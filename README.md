@@ -423,4 +423,3 @@ ggplot(test_table) + geom_point(aes(x = log2_b, y = neg_log10_qval, col=diffexpr
 sleuth_live(so)
 ```
 
-# Thank you
