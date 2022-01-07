@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+## Bioinformatic steps in RNA sequencing (Tutorial)
 
-You can use the [editor on GitHub](https://github.com/shijusisobhan/Bioinformatic-RNAseq/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Quantifying gene expression and identifying transcripts that are differentially expressed between two set of samples is an important approach in modern biotechnology. RNA-seq analysis based on next-generation sequencing (NGS) data is the gold standard for the analysis of gene expression at the level of the whole transcriptome.  RNA-seq involves isolation of total RNA from tissues or cells of interest followed by the construction of DNA libraries and sequencing of these libraries using a next-generation sequencing instrument (Fig 1). 
 
 ### Markdown
 
