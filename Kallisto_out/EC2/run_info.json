@@ -1,0 +1,13 @@
+{
+	"n_targets": 30839,
+	"n_bootstraps": 10,
+	"n_processed": 30791880,
+	"n_pseudoaligned": 21993212,
+	"n_unique": 6506352,
+	"p_pseudoaligned": 71.4,
+	"p_unique": 21.1,
+	"kallisto_version": "0.46.1",
+	"index_version": 10,
+	"start_time": "Wed Jul 07 17:12:52 2021",
+	"call": "kallisto quant -i transcriptome.idx -o EC2 -b 10 EC2_CKDL210011128-1a_HC727DSX2_L2_1.fq.gz EC2_CKDL210011128-1a_HC727DSX2_L2_2.fq.gz EC2_CKDL210011128-1a_HF5M3DSX2_L2_1.fq.gz EC2_CKDL210011128-1a_HF5M3DSX2_L2_2.fq.gz"
+}

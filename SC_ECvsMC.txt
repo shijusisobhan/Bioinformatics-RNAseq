@@ -1,0 +1,7 @@
+sample	condition
+EC1	EC
+EC2	EC
+EC3	EC
+MC1	MC
+MC2	MC
+MC3	MC
