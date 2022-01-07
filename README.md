@@ -1,11 +1,11 @@
-# Bioinformatic steps in RNA sequencing (Tutorial)
+# Bioinformatics steps in RNA sequencing data analysis (Tutorial)
 
 Quantifying gene expression and identifying transcripts that are differentially expressed between two set of samples is an important approach in modern biotechnology. RNA-seq analysis based on next-generation sequencing (NGS) data is the gold standard for the analysis of gene expression at the level of the whole transcriptome.  RNA-seq involves isolation of total RNA from tissues or cells of interest followed by the construction of DNA libraries and sequencing of these libraries using a next-generation sequencing instrument (Fig 1). 
 
 ![Fig1](https://raw.githubusercontent.com/shijusisobhan/Bioinformatic-RNAseq/main/Figures/Fig1.jpg)
 *Fig 1. RNA sequencing steps (From Griffith et al. (2015))*
 
-In this tutorial we explain the different bioinformatic steps involved in the analysis of RNA seq data to find the differentially expressed genes in two distinct set of samples. Fig 2 shows the current work flow of bioinformatic analysis of RNA seq data. 
+In this tutorial we explain the different bioinformatics steps involved in the analysis of RNA seq data to find the differentially expressed genes in two distinct set of samples. Fig 2 shows the current work flow of bioinformatics analysis of RNA seq data. 
 
 ![Fig2](https://raw.githubusercontent.com/shijusisobhan/Bioinformatic-RNAseq/main/Figures/Fig2.jpg)
 *Fig 2. Current RNA seq analysis work flow*
