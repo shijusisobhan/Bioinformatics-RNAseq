@@ -404,13 +404,14 @@ N_UP<-length(test_table$diffexpressed[test_table$diffexpressed =="UP"])
 N_DOWN<-length(test_table$diffexpressed[test_table$diffexpressed =="DOWN"])
 ```
 
-
+```markdown
 > N_significant
 [1] 51
 > N_UP
 [1] 43
 > N_DOWN
 [1] 8
+```
 
 - Customized volcano plot
 
@@ -425,6 +426,7 @@ ggplot(test_table) + geom_point(aes(x = log2_b, y = neg_log10_qval, col=diffexpr
   *Fig 17*
   
  -  More analysis and results can be seen on an interactive shiny app by using the following command:
+ 
 ```markdown
 sleuth_live(so)
 ```
