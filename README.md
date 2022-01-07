@@ -96,23 +96,30 @@ You have two option to create a transcriptome indices. Either directly download 
   ```
   First method is the easiest method. User can download the transcriptome indices of different species from [here](https://github.com/pachterlab/kallisto-transcriptome-indices/releases). Download the drosophila_melanogaster.tar.gz and extract the files. There are different files on the folder, copy the file transcriptome.idx, and place on the folder containing fastq files. Now all the fastq files and transcriptome.idx files are in the same folder.
   
-These are the samples and their corresponding fastq files 
+These are the samples and their corresponding fastq files
+
 MC1
+
 SRR16473812_1.fastq.gz, SRR16473812_2.fastq.gz, SRR16473813_1.fastq.gz, SRR16473813_2.fastq.gz
 
 MC2
+
 SRR16473810_1.fastq.gz, SRR16473810_2.fastq.gz, SRR16473811_1.fastq.gz, SRR16473811_2.fastq.gz
 
 MC3
+
 SRR16473808_1.fastq.gz, SRR16473808_2.fastq.gz, SRR16473809_1.fastq.gz, SRR16473809_2.fastq.gz
 
 EC1
+
 SRR16473824_1.fastq.gz, SRR16473824_2.fastq.gz, SRR16473825_1.fastq.gz, SRR16473825_2.fastq.gz
 
 EC2
+
 SRR16473822_1.fastq.gz, SRR16473822_2.fastq.gz, SRR16473823_1.fastq.gz, SRR16473823_2.fastq.gz
 
 EC3
+
 SRR16473820_1.fastq.gz, SRR16473820_2.fastq.gz, SRR16473821_1.fastq.gz, SRR16473821_2.fastq.gz
 
 Now we can look at the sample MC1 and do the alignment using kallisto. Folder may be look like this:
@@ -320,14 +327,15 @@ test_table$log2_b <- log2(test_table$raw_b)
 ```
 
 - Calculate negative log10 of q value, which can be used for volcano plot. 
+- 
 ```markdown
 test_table$neg_log10_qval<- -log10(test_table$qval)
 ```
 
 - Now we can integrate gene expression of each samples, p, q values of differentially expressed genes, and log2(FC) and write the results to a csv file.
+
 ```markdown
 sleuth_gene_matrix <- sleuth_to_matrix(so, 'obs_norm', 'tpm')
-
 sleuth_gene_matrix
 ```
 
