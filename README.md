@@ -311,9 +311,9 @@ so <- sleuth_wt(so, which_beta = beta)
 ```
 
 - Sleuth results
+
 ```markdown
 test_table <- sleuth_results(so, beta)
-
 test_table
 ```
 
@@ -321,13 +321,15 @@ test_table
 *Fig 15*
 
 - Second column is the gene name, ‘b’ value is the effect sizes which calculates are on the natural log scale. To get the raw effect sizes, take the exponents of the beta values; you could then calculate log2 effect sizes as follows:
+
+
 ```markdown
 test_table$raw_b <- exp(test_table$b)
 test_table$log2_b <- log2(test_table$raw_b)
 ```
 
 - Calculate negative log10 of q value, which can be used for volcano plot. 
-- 
+
 ```markdown
 test_table$neg_log10_qval<- -log10(test_table$qval)
 ```
