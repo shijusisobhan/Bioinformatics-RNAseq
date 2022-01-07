@@ -390,22 +390,17 @@ sig_level=0.1
 
 ```markdown
 test_table$diffexpressed <- "Not sig"
-
 #if log2Foldchange > 0 and qvalue < 0.1, set as "UP" 
-
 test_table$diffexpressed[test_table$log2_b > 0 & test_table$qval < sig_level] <- "UP"
-
 #if log2Foldchange < 0 qvalue < 0.1, set as "DOWN"
-
 test_table$diffexpressed[test_table$log2_b < 0 & test_table$qval < sig_level] <- "DOWN"
 ```
 
 - Find the number of differentially expressed, up and down regulated genes
+- 
 ```markdown
 N_significant<-length(test_table$diffexpressed[test_table$diffexpressed !="Not sig"])
-
 N_UP<-length(test_table$diffexpressed[test_table$diffexpressed =="UP"])
-
 N_DOWN<-length(test_table$diffexpressed[test_table$diffexpressed =="DOWN"])
 ```
 
