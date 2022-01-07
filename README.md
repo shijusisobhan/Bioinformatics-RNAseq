@@ -10,10 +10,10 @@ In this tutorial we explain the different bioinformatic steps involved in the an
 ![Fig2](https://raw.githubusercontent.com/shijusisobhan/Bioinformatic-RNAseq/main/Figures/Fig2.jpg)
 *Fig 2. Current RNA seq analysis work flow*
 
-## Data selection for the analysis
+### Data selection for the analysis
 Drosophila is a fruit fly belonging to the family Drosophilidae. Drosophila melanogaster, one species of drosophila, has been widely used as a model organism in developmental biology. A study has been conducted by Allada Lab to understand the molecular mechanisms by which discrete circadian clock neurons program a homeostatic sleep center [Full Text](https://www.biorxiv.org/content/10.1101/2021.10.22.465404v1.full). In normal cycles of day and night, Drosophila exhibit morning and evening peaks of activity, which are controlled by two different group of neurons in the brain. In this study RNA sequence has been done and collected the data from morning and evening cells. There are 12 samples in this study and all are deposited in the Gene Expression Omnibus (GEO) with an accession number GSE186076 [GEO accession](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE186076). In this tutorial we are looking on only 6 samples Morning control (3 samples MC1, MC2, MC3) and Evening control (3 samples EC1, EC2, EC3).  We select these data set, because these are some special case which will explained in the proceeding sections. Our aim is to performing RNA seq analysis on these data and find out differentially expressed genes in Morning and evening cells. 
 
-### I. Download the RNA seq raw data (fastq, fasta…) from the public data base.
+## I. Download the RNA seq raw data (fastq, fasta…) from the public data base.
 There are many methods are existing to download raw data from the public data base. Here I am describing one of the easiest methods to download the data. Users can use any method to download the data. 
 
 Note: Raw data are usually big in size (normally GBs). If the user is not interested in downloading the data or your internet connection has only limited bandwidth, you can skip this downloading step. Any way I am providing the kallisto output [here](https://github.com/shijusisobhan/Bioinformatic-RNAseq) and user can download it directly from the repository and perform sleuth analysis (Differential gene expression analysis).
