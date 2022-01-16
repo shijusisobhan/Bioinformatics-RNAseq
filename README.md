@@ -305,6 +305,7 @@ so <- sleuth_lrt(so, "reduced", "full")
 ```
 
 - Wald test
+
 In our example, we have only one condition (MC or EC). We can use a Wald test to measure the effect of a MC against the EC. Wald tests calculate p values to estimate the significance of any difference between conditions (MC and EC).
 
 First, we have to know what are the models are available for testing:
