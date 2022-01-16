@@ -19,18 +19,18 @@ There are many methods are exist to download raw data from the public database. 
 Note: Raw data are usually big (normally GBs). If the user is not interested in downloading the data or your internet connection has only limited bandwidth, you can skip this downloading step. Anyway, I am providing the Kallisto output [here](https://github.com/shijusisobhan/Bioinformatic-RNAseq) and users can download it directly from the repository and perform sleuth analysis (Differential gene expression analysis).
 
 Downloading steps
-1. Go to the European Nucleotide Archive (ENA) [website](https://www.ebi.ac.uk/ena)
-2. In the search tab on the top right, enter the GEO accession number  GSE186076
+1) Go to the European Nucleotide Archive (ENA) [website](https://www.ebi.ac.uk/ena)
+2) In the search tab on the top right, enter the GEO accession number  GSE186076
 
 ![Fig3](https://raw.githubusercontent.com/shijusisobhan/Bioinformatic-RNAseq/main/Figures/Fig3.jpg)
 *Fig 3*
 
-3.ENA provide following search results
+3) ENA provide following search results
 
 ![Fig4](https://raw.githubusercontent.com/shijusisobhan/Bioinformatic-RNAseq/main/Figures/Fig4.jpg)
 *Fig 4*
 
- 4.Click on the SRP341965 tab, you will be directed to following page
+ 4) Click on the SRP341965 tab, you will be directed to following page
  
  ![Fig5](https://raw.githubusercontent.com/shijusisobhan/Bioinformatic-RNAseq/main/Figures/Fig5.jpg)
  *Fig 5*
@@ -45,14 +45,14 @@ In this tutorial we are only interested on EC and MC samples. When you looking a
 
 Now you can easily identify the samples.
 
-5.Select only the EC and MC sample (Evening control non-sleep deprived EC1/EC2/EC3, Morning control non-sleep deprived MC1/MC2/MC3).
+5) Select only the EC and MC sample (Evening control non-sleep deprived EC1/EC2/EC3, Morning control non-sleep deprived MC1/MC2/MC3).
 
 ![Fig7](https://raw.githubusercontent.com/shijusisobhan/Bioinformatic-RNAseq/main/Figures/Fig7.jpg)
 *Fig 7*
 
 Note: User can see that, two entries have the same sample title (eg: evening control, non-sleep deprived EC2, evening control, non-sleep deprived EC2). These two entries are the sequencing data of the same samples but, data is split into these two entries. For example, SRR16473822_1.fastq.gz and SRR16473823_1.fastq.gz are the pair-1 end sequencing fastq files of the sample EC2 and SRR16473822_2.fastq.gz and SRR16473823_2.fastq.gz are the pair-2 end sequencing fastq files of the same sample EC2. Kaliisto analysis does not required to combine them together. I will explained it in details in the kallisto analysis section how to process these kind of data. This is what I stated at the beginning that these data sets are special case!!!!
 
-6.Click on the ‘Download selected files’ tab to start download the fastq files. Files are downloaded in the zip file format. Unzip it and extract the files. 
+6) Click on the ‘Download selected files’ tab to start download the fastq files. Files are downloaded in the zip file format. Unzip it and extract the files. 
 
 Now you have fastq files (raw RNA seq reads) with you. Next steps is to align the raw reads to a reference transcripts using the software Kallisto.
 
