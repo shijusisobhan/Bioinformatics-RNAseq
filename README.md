@@ -363,7 +363,7 @@ DGE_table<-cbind(row.names(sleuth_gene_matrix), sleuth_gene_matrix)
 ```
 
 
-- Sort test_table according to p value and Extract only genename,p and q and log2(FC)
+- Sort test_table according to p value and Extract only genename,p, q and log2(FC)
 
 ```markdown
 p_val_sort<-(test_table[order(test_table$target_id),]) 
@@ -409,7 +409,7 @@ test_table$diffexpressed[test_table$log2_b < 0 & test_table$qval < sig_level] <-
 ```
 
 - Find the number of differentially expressed, up and down regulated genes
-- 
+
 ```markdown
 N_significant<-length(test_table$diffexpressed[test_table$diffexpressed !="Not sig"])
 N_UP<-length(test_table$diffexpressed[test_table$diffexpressed =="UP"])
