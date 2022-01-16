@@ -129,7 +129,7 @@ Now we can look at the sample MC1 and do the alignment using kallisto. Folder ma
 
 For pseudo alignment enter the following command in the command prompt.
 
-1. Change the directory first. Locate to the folder where the fastq files and index file are stored. For example, I am stored above the files in D drive with a folder name Drosophila_fastq_MC1
+1. Change the directory first. Locate to the folder where the fastq files and index file are stored. For example, I stored above the files in D drive with a folder name Drosophila_fastq_MC1
 
 Type on the command line:
 ```markdown
