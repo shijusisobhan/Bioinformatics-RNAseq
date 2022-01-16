@@ -177,10 +177,14 @@ c. devtools
 d. ggplot2
 
 ### 2. Place the kallisto output of all the samples in a single folder, say ‘Kallisto_out’
+[here](https://github.com/shijusisobhan/Bioinformatic-RNAseq) is the link to the kallisto output. Download all the kallisto output and placed in a single folder as shown in Fig 12. 
+
+Note: Don’t place any other file or folder inside the Kallisto_out
+
 ![Fig13](https://raw.githubusercontent.com/shijusisobhan/Bioinformatic-RNAseq/main/Figures/Fig13.jpg)
 *Fig 12*
 
-Note: Don’t place any other file or folder inside the Kallisto_out
+
 
 ### 3. Prepare a sample-condition table
 
@@ -429,5 +433,73 @@ ggplot(test_table) + geom_point(aes(x = log2_b, y = neg_log10_qval, col=diffexpr
  
 ```markdown
 sleuth_live(so)
+```
+
+Complete R code for RNA seq analysis is below: 
+
+```markdown
+rm(list=ls())
+
+library(sleuth)
+library(biomaRt)
+library(devtools)
+library('ggplot2')
+
+setwd('D:/Sleuth_analysis')
+base_dir <- 'D:/Sleuth_analysis/Kallisto_out'
+
+sample_id <- dir(file.path(base_dir))
+kal_dirs <- sapply(sample_id, function(id) file.path(base_dir, id))
+s2c <- read.table("SC_ECvsMC.txt", header = TRUE, stringsAsFactors=FALSE)
+s2c <- dplyr::mutate(s2c, path = kal_dirs)
+
+#mart <- useEnsembl(biomart = "ensembl", dataset = "dmelanogaster_gene_ensembl")
+mart <- useMart(biomart = "ENSEMBL_MART_ENSEMBL", dataset = "dmelanogaster_gene_ensembl", host="uswest.ensembl.org",ensemblRedirect = FALSE)
+t2g <- biomaRt::getBM(attributes = c("ensembl_transcript_id", "ensembl_gene_id","external_gene_name"), mart = mart)
+t2g <- dplyr::rename(t2g, target_id = ensembl_transcript_id,ens_gene = ensembl_gene_id, ext_gene = external_gene_name)
+
+so<- sleuth_prep(s2c, ~ condition, target_mapping = t2g,aggregation_column = 'ext_gene', gene_mode = TRUE, extra_bootstrap_summary=T,
+                 read_bootstrap_tpm = TRUE)
+
+so <- sleuth_fit(so, ~condition, "full")
+models(so)
+beta='conditionMC'
+so <- sleuth_wt(so, which_beta = beta)
+
+sig_level=0.1
+test_table <- sleuth_results(so, beta)
+test_table$raw_b <- exp(test_table$b)
+test_table$log2_b <- log2(test_table$raw_b)
+test_table$neg_log10_qval<- -log10(test_table$qval)
+sleuth_gene_matrix <- sleuth_to_matrix(so, 'obs_norm', 'tpm')
+
+DGE_table<-cbind(row.names(sleuth_gene_matrix), sleuth_gene_matrix)# Add row names as one colum (gene names
+p_val_sort<-(test_table[order(test_table$target_id),]) # sort according to gene name
+p_val_reduce<-p_val_sort[c("target_id","pval","qval", "log2_b")] # extract only genename,p and q and log2()
+DGE_all<-merge(DGE_table, p_val_reduce, by.x=1 , by.y="target_id") # megrge with gene expression and p, q values
+DGE_all<-na.omit(DGE_all)
+DGE_all<-(DGE_all[order(-DGE_all$log2_b),])
+write.csv(DGE_all, 'DGE_table_ECvsMC.csv')
+
+test_table$diffexpressed <- "Not sig"
+test_table$diffexpressed[test_table$log2_b > 0 & test_table$qval < sig_level] <- "UP"
+test_table$diffexpressed[test_table$log2_b < 0 & test_table$qval < sig_level] <- "DOWN"
+
+N_significant<-length(test_table$diffexpressed[test_table$diffexpressed !="Not sig"])
+N_UP<-length(test_table$diffexpressed[test_table$diffexpressed =="UP"])
+N_DOWN<-length(test_table$diffexpressed[test_table$diffexpressed =="DOWN"])
+
+N_significant
+N_UP
+N_DOWN
+
+library('ggplot2')
+ggplot(test_table) + geom_point(aes(x = log2_b, y = neg_log10_qval, col=diffexpressed))+
+  geom_vline(xintercept=0, col="black",  linetype="dashed")+
+  scale_color_manual(values=c("blue", "black", "red"))+
+  labs(x = "log2(FC)", y="-log10(q)", colour="DEG")
+  
+  sleuth_live(so)
+  
 ```
 
