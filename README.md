@@ -142,7 +142,7 @@ Cd D:\Drosophila_fastq_MC1
 kallisto quant -i index_file -o output_folder --single -l 200 -s 20 file1.fastq.gz file2.fastq.gz file3.fastq.gz...
 ```
 
-Index_file is thetranscriptome indices file that is we already downloaded. In this case it is transcriptome.idx. output_folder is the folder name where we have to store the kallisto output for this sample. Good practice is giving the sample name itself. In this example appropriate output folder name is MC1. -l is the estimated average fragment length, -s is the estimated standard deviation of fragment length. Typical Illumina libraries produce fragment lengths ranging from 180–200 bp. The last parts are fastq file name which we need to quantify. However, in our case it is paired end sequence. Syntax for the quant command for paired end sequencing reads are as below:
+Index_file is the transcriptome indices file that is we already downloaded. In this case it is transcriptome.idx. output_folder is the folder name where we have to store the kallisto output for this sample. Good practice is giving the sample name itself. In this example appropriate output folder name is MC1. -l is the estimated average fragment length, -s is the estimated standard deviation of fragment length. Typical Illumina libraries produce fragment lengths ranging from 180–200 bp. The last parts are fastq file name which we need to quantify. However, in our case it is paired end sequence. Syntax for the quant command for paired end sequencing reads are as below:
 
 ```markdown
 kallisto quant -i index_file -o output_folder -b 10 pairA_1.fastq pairA_2.fastq pairB_1.fastq pairB_2.fastq
