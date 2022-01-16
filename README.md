@@ -170,10 +170,14 @@ Make sure that all the files are in the same folder.
 sleuth is an R programming langue based bioinformatic tool for differential gene expression analysis. This tool uses transcript abundance estimates output from Kallisto which use bootstrap sampling. For more read: [Full paper](https://www.nature.com/articles/nmeth.4324). Without explaining more details about the theory and math behind the sleuth, we are directly go into the sleuth analysis for differentially expressed genes between MC and EC samples. 
 
 ### 1. Install the R packages
-First step you have to install required R packages for the sleuth analysis. Here I am listing the libraries required for a typical sleuth analysis:
+First step is to install required R packages for the sleuth analysis. Here I am listing the libraries required for a typical sleuth analysis:
+
 a. sleuth
+
 b. biomaRt
+
 c. devtools
+
 d. ggplot2
 
 ### 2. Place the kallisto output of all the samples in a single folder, say ‘Kallisto_out’
