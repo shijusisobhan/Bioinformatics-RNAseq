@@ -207,7 +207,7 @@ Note: Enter the sample name in the same order that they are appeared in the ‘K
 
 d. Save the file with a file name, say ‘SC_ECvsMC.txt’.
 
-Note: R will usually sort variable conditions alphabetically, and it use the first condition in the list as the control condition. But that won’t work all time. For example, with conditions Mutant and WT; that would make Mutant the control condition. So here, type condition is _WT; the '_' ensures that WT condition is sorted first.
+Note: R will usually sort variable conditions alphabetically, and it use the first condition in the list as the control condition. But that won’t work all time. For example, with conditions Mutant and WT; that would make Mutant the control condition. So here, type condition is \_WT; the '\_' ensures that WT condition is sorted first.
 
 ### 4. R scripting for differential gene expression analysis
 
