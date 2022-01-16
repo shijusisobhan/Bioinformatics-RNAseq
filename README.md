@@ -193,8 +193,11 @@ Note: Don’t place any other file or folder inside the Kallisto_out
 ### 3. Prepare a sample-condition table
 
 Sample-condition table explain the experimental design. For example, here we have 6 samples and 1 experimental condition to consider. Here the experimental condition is the cell difference, (Morning, control neurons and evening, control neurons). Now we can consider another experiment with two experimental conditions say, an experiment conducted on two different cells (MC and EC) in two different temperature (say 25 degC, and 18 degC). Now we have to consider two different experimental conditions; cells, and temperature. So, number of experimental conditions may differ. Depending on the experimental conditions you have to prepare the sample-condition table. There are several methods to prepare the sample-condition table. Here I am providing a simple method:
+
 a. Opens a text file
+
 b. First column is the sample name, second column is the condition-1, third column is the condtion-2 and so on. Columns are separated by tab key. 
+
 c. In our case, there is only one condition, cell type (Evening control (EC), and morning control (MC)) and its sample-condition table is as follows. 
 
 ![Fig14](https://raw.githubusercontent.com/shijusisobhan/Bioinformatic-RNAseq/main/Figures/fig14.jpg)
