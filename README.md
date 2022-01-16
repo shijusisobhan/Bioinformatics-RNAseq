@@ -435,7 +435,7 @@ ggplot(test_table) + geom_point(aes(x = log2_b, y = neg_log10_qval, col=diffexpr
 sleuth_live(so)
 ```
 
-Complete R code for RNA seq analysis is below: 
+-Complete R code for RNA seq analysis is below: 
 
 ```markdown
 rm(list=ls())
